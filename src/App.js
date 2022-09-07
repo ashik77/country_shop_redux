@@ -1,9 +1,26 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./containers/Header";
+import CountryListing from "./containers/CountryListing";
+import CountryDetail from "./containers/CountryDetail";
+import NoMatch from "./containers/NoMatch";
 
 function App() {
   return (
     <div className="App">
-      <h2>Hello</h2>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<CountryListing />}></Route>
+          <Route exact path="/home" element={<CountryListing />}></Route>
+          <Route
+            exact
+            path="/country/:countryId"
+            element={<CountryDetail />}
+          ></Route>
+          <Route path="*" element={<NoMatch />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
