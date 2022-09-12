@@ -12,10 +12,10 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<CountryListing />}></Route>
-          <Route exact path="/home" element={<CountryListing />}></Route>
+          {/* <Route exact path="/home" element={<CountryListing />}></Route> */}
           <Route
             exact
-            path="/country/:countryId"
+            path="/v3.1/alpha/:countryId"
             element={<CountryDetail />}
           ></Route>
           <Route path="*" element={<NoMatch />}></Route>

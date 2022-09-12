@@ -6,7 +6,7 @@ import CountryComponent from "./CountryComponent";
 
 const CountryListing = () => {
   //getting data from redux-store
-  const countries = useSelector((state) => state);
+  const allCountries = useSelector((state) => state.allCountries);
   const dispatch = useDispatch();
 
   const fetchCountries = async () => {
@@ -23,7 +23,7 @@ const CountryListing = () => {
     fetchCountries();
   }, []);
 
-  console.log("Countries:", countries);
+  console.log("Countries:", allCountries);
   return (
     <div className="ui grid container">
       <CountryComponent />

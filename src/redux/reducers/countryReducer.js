@@ -13,3 +13,13 @@ export const countryReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+
+export const selectedCountryReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case actionTypes.SELECTED_COUNTRY:
+      return { ...state, ...payload };
+
+    default:
+      return state;
+  }
+};
